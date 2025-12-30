@@ -1,0 +1,267 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Strona Główna";
+}
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="~/sources/film_arche.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title animate-fade-in">Puchar Polski Amatorów<br>w Szachach</h1>
+        <p class="hero-subtitle animate-fade-in-delay">Cykl 7 turniejów w całej Polsce</p>
+        <div class="hero-buttons animate-fade-in-delay-2">
+            <a href="#turnieje" class="btn-primary">Terminy i lokalizacje</a>
+            <a href="#" class="btn-secondary">Zapisz się</a>
+        </div>
+    </div>
+    <div class="scroll-indicator animate-bounce">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section class="info-section" id="info">
+    <div class="container">
+        <div class="info-content animate-on-scroll">
+            <div class="chess-icon">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 4L36 16H28L32 4Z" fill="#017d3a"/>
+                    <path d="M24 16H40V20H24V16Z" fill="#017d3a"/>
+                    <path d="M26 20H38V24C38 28 36 32 32 36C28 32 26 28 26 24V20Z" fill="#017d3a"/>
+                    <path d="M22 36H42L44 48H20L22 36Z" fill="#017d3a"/>
+                    <path d="M18 48H46V56H18V48Z" fill="#017d3a"/>
+                    <path d="M16 56H48V60H16V56Z" fill="#017d3a"/>
+                </svg>
+            </div>
+            <h2 class="section-title">O Pucharze Polski Amatorów</h2>
+            <p class="info-text">
+                Puchar Polski Amatorów w Szachach to wyjątkowy cykl turniejowy stworzony z myślą o wszystkich pasjonatach królewskiej gry. 
+                Siedem starannie zaplanowanych wydarzeń w najpiękniejszych zakątkach Polski daje szansę na rywalizację, rozwój i poznanie wspaniałej społeczności szachowej.
+            </p>
+            <p class="info-text">
+                Niezależnie od poziomu zaawansowania – każdy znajdzie tu coś dla siebie. 
+                Od szybkich partii blitz po klasyczne rozgrywki z kontrolą czasu. Dołącz do nas i odkryj magię turniejowych szachów!
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Tournaments Section -->
+<section class="tournaments-section" id="turnieje">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Turnieje 2025</h2>
+        <p class="section-subtitle animate-on-scroll">Siedem wyjątkowych wydarzeń w całej Polsce</p>
+        
+        <div class="tournaments-grid">
+            <!-- Tournament 1 -->
+            <article class="tournament-card animate-on-scroll">
+                <div class="tournament-date">
+                    <span class="day">21-22</span>
+                    <span class="month">LUT</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Częstochowa</h3>
+                    <p class="tournament-venue">Arche Hotel</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        10'+5" i 3'+2"
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 2 -->
+            <article class="tournament-card tournament-card--featured animate-on-scroll">
+                <div class="tournament-badge">Mistrzostwa Polski</div>
+                <div class="tournament-date">
+                    <span class="day">10-19</span>
+                    <span class="month">KWI</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Krynica-Zdrój</h3>
+                    <p class="tournament-venue">Belmonte</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        90'+30" (Mistrzostwa Polski Amatorów)
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 3 -->
+            <article class="tournament-card animate-on-scroll">
+                <div class="tournament-date">
+                    <span class="day">1-3</span>
+                    <span class="month">MAJ</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Wrocław Airport</h3>
+                    <p class="tournament-venue">Arche Hotel</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        60'+30"
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 4 -->
+            <article class="tournament-card tournament-card--featured animate-on-scroll">
+                <div class="tournament-badge">MP w szachach szybkich</div>
+                <div class="tournament-date">
+                    <span class="day">6-7</span>
+                    <span class="month">CZE</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Krakowska</h3>
+                    <p class="tournament-venue">Arche Hotel</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        10'+5" / 3'+2"
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 5 -->
+            <article class="tournament-card animate-on-scroll">
+                <div class="tournament-date">
+                    <span class="day">24-30</span>
+                    <span class="month">LIP</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Warszawa</h3>
+                    <p class="tournament-venue">Arche Puławska Residence</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        90'+30"
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 6 -->
+            <article class="tournament-card animate-on-scroll">
+                <div class="tournament-date">
+                    <span class="day">16-18</span>
+                    <span class="month">PAŹ</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Gdańsk</h3>
+                    <p class="tournament-venue">Arche Lotnisko</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        30'+30"
+                    </p>
+                </div>
+            </article>
+
+            <!-- Tournament 7 -->
+            <article class="tournament-card animate-on-scroll">
+                <div class="tournament-date">
+                    <span class="day">14-15</span>
+                    <span class="month">LIS</span>
+                </div>
+                <div class="tournament-info">
+                    <h3 class="tournament-location">Żnin</h3>
+                    <p class="tournament-venue">Arche Cukrownia</p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        10'+5" i 3'+2"
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container animate-on-scroll">
+            <img src="~/sources/puchar_polski_amatorow.jpg" alt="Mapa lokalizacji turniejów Pucharu Polski Amatorów w Szachach" class="map-image" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="sponsors-section" id="sponsorzy">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Partnerzy</h2>
+        
+        <div class="sponsors-grid">
+            <div class="sponsor sponsor--main animate-on-scroll">
+                <span class="sponsor-label">Partner Główny</span>
+                <img src="~/sources/arche.svg" alt="Arche - Partner Główny" class="sponsor-logo sponsor-logo--main">
+            </div>
+            <div class="sponsor animate-on-scroll">
+                <span class="sponsor-label">Partner</span>
+                <img src="~/sources/columbus.jpg" alt="Columbus - Partner" class="sponsor-logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Organizers Section -->
+<section class="organizers-section" id="organizatorzy">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Organizatorzy</h2>
+        
+        <div class="organizers-grid">
+            <div class="organizer-card animate-on-scroll">
+                <div class="organizer-image-wrapper">
+                    <img src="~/sources/zbigniew.jpg" alt="Zbigniew Pakleza - Organizator" class="organizer-image" loading="lazy">
+                </div>
+                <h3 class="organizer-name">Zbigniew Pakleza</h3>
+                <p class="organizer-role">Organizator</p>
+                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
+            </div>
+            
+            <div class="organizer-card animate-on-scroll">
+                <div class="organizer-image-wrapper">
+                    <img src="~/sources/artur.jpg" alt="Artur Jakubiec - Organizator" class="organizer-image" loading="lazy">
+                </div>
+                <h3 class="organizer-name">Artur Jakubiec</h3>
+                <p class="organizer-role">Organizator</p>
+                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
+            </div>
+            
+            <div class="organizer-card animate-on-scroll">
+                <div class="organizer-image-wrapper">
+                    <img src="~/sources/koc.png" alt="Klub KOC" class="organizer-image" loading="lazy">
+                </div>
+                <h3 class="organizer-name">Klub KOC</h3>
+                <p class="organizer-role">Współorganizator</p>
+                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-copyright">© 2025 Puchar Polski Amatorów w Szachach. Wszelkie prawa zastrzeżone.</p>
+            <p class="footer-credits">Projekt realizowany we współpracy z siecią hoteli Arche</p>
+        </div>
+    </div>
+</footer>
