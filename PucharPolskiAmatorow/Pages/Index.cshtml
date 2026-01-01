@@ -29,27 +29,15 @@
 <section class="info-section" id="info">
     <div class="container">
         <div class="info-content animate-on-scroll">
-            <div class="chess-icon">
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M32 4L36 16H28L32 4Z" fill="#017d3a"/>
-                    <path d="M24 16H40V20H24V16Z" fill="#017d3a"/>
-                    <path d="M26 20H38V24C38 28 36 32 32 36C28 32 26 28 26 24V20Z" fill="#017d3a"/>
-                    <path d="M22 36H42L44 48H20L22 36Z" fill="#017d3a"/>
-                    <path d="M18 48H46V56H18V48Z" fill="#017d3a"/>
-                    <path d="M16 56H48V60H16V56Z" fill="#017d3a"/>
-                </svg>
-            </div>
             <h2 class="section-title">O Pucharze Polski Amatorów</h2>
             <p class="info-text">
-                Puchar Polski Amatorów w Szachach to wyjątkowy cykl turniejowy stworzony z myślą o wszystkich pasjonatach królewskiej gry. 
-                Siedem starannie zaplanowanych wydarzeń w najpiękniejszych zakątkach Polski daje szansę na rywalizację, rozwój i poznanie wspaniałej społeczności szachowej.
+                Bez względu na to, czy masz 5 czy 75 lat, czy grałeś już wcześniej w turniejach czy nie – Arche Puchar Polski Amatorów jest dla Ciebie. To cykl ogólnopolskich rozgrywek dla pasjonatów królewskiej gry, z pulą nagród przekraczającą 100 000 zł.
             </p>
             <p class="info-text">
-                Niezależnie od poziomu zaawansowania – każdy znajdzie tu coś dla siebie. 
-                Od szybkich partii blitz po klasyczne rozgrywki z kontrolą czasu. Dołącz do nas i odkryj magię turniejowych szachów!
+                W każdym z siedmiu turniejów rywalizujemy w różnych tempach – turnieje klasyczne, rapid i blitz, z odrębnym systemem punktacji oraz klasyfikacją generalną obejmującą cały cykl.
             </p>
-            <p class="info-text info-text--highlight">
-                Bez względu na to, czy masz 5 czy 75 lat, czy grałeś już wcześniej w turniejach czy nie - Arche Puchar Polski Amatorów jest dla Ciebie!
+            <p class="info-text">
+                Każdy etap jest transmitowany na żywo na <a href="https://www.youtube.com/@@PolskiZwiazekSzachowy" target="_blank" rel="noopener noreferrer" class="info-link">YouTube</a>, dzięki czemu kibice mogą śledzić emocje przy szachownicach od pierwszego ruchu do ostatniego mata.
             </p>
             
             <!-- Ranking divisions -->
@@ -61,16 +49,6 @@
                     <span class="ranking-badge ranking-badge--advanced">1901–2200</span>
                 </div>
             </div>
-            
-            <!-- Live streams -->
-            <div class="live-stream-info">
-                <a href="https://www.youtube.com/@@PolskiZwiazekSzachowy" target="_blank" rel="noopener noreferrer" class="live-stream-link">
-                    <svg class="youtube-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    <span>Transmisje live na kanale YouTube PZSzach</span>
-                </a>
-            </div>
         </div>
     </div>
 </section>
@@ -78,9 +56,6 @@
 <!-- Tournaments Section -->
 <section class="tournaments-section" id="turnieje">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Turnieje 2025</h2>
-        <p class="section-subtitle animate-on-scroll">Siedem wyjątkowych wydarzeń w całej Polsce</p>
-        
         <div class="tournaments-grid">
             <!-- Tournament 1 - Częstochowa Zinzino -->
             <article class="tournament-card animate-on-scroll">
@@ -100,7 +75,13 @@
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
-                        10'+5" i 3'+2"
+                        10'+5"
+                    </p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                        </svg>
+                        3'+2"
                     </p>
                 </div>
             </article>
@@ -108,7 +89,7 @@
             <!-- Tournament 2 - Krynica Columbus -->
             <article class="tournament-card tournament-card--featured animate-on-scroll">
                 <div class="tournament-sponsor">
-                    <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo">
+                    <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo tournament-sponsor-logo--large">
                 </div>
                 <div class="tournament-badge">Mistrzostwa Polski</div>
                 <div class="tournament-date">
@@ -116,15 +97,14 @@
                     <span class="month">KWI</span>
                 </div>
                 <div class="tournament-info">
-                    <p class="tournament-name">Columbus Mistrzostwa Polski</p>
+                    <p class="tournament-name tournament-name--spaced">Columbus Mistrzostwa Polski</p>
                     <h3 class="tournament-location">Krynica-Zdrój</h3>
                     <p class="tournament-venue">Belmonte</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
                         </svg>
-                        90'+30" (Mistrzostwa Polski Amatorów)
+                        90'+30"
                     </p>
                 </div>
             </article>
@@ -139,9 +119,8 @@
                     <h3 class="tournament-location">Wrocław Airport</h3>
                     <p class="tournament-venue">Arche Hotel</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
                         </svg>
                         60'+30"
                     </p>
@@ -156,14 +135,20 @@
                     <span class="month">CZE</span>
                 </div>
                 <div class="tournament-info">
-                    <h3 class="tournament-location">Krakowska</h3>
-                    <p class="tournament-venue">Arche Hotel</p>
+                    <h3 class="tournament-location tournament-location--spaced">Warszawa</h3>
+                    <p class="tournament-venue">Arche Hotel Krakowska</p>
                     <p class="tournament-tempo">
                         <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
-                        10'+5" / 3'+2"
+                        10'+5"
+                    </p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                        </svg>
+                        3'+2"
                     </p>
                 </div>
             </article>
@@ -178,9 +163,8 @@
                     <h3 class="tournament-location">Warszawa</h3>
                     <p class="tournament-venue">Arche Puławska Residence</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
                         </svg>
                         90'+30"
                     </p>
@@ -190,7 +174,7 @@
             <!-- Tournament 6 - Gdańsk Q4Rail -->
             <article class="tournament-card animate-on-scroll">
                 <div class="tournament-sponsor">
-                    <img src="~/sources/q4rails.svg" alt="Q4Rail" class="tournament-sponsor-logo">
+                    <img src="~/sources/q4rail.png" alt="Q4Rail" class="tournament-sponsor-logo">
                 </div>
                 <div class="tournament-date">
                     <span class="day">16-18</span>
@@ -201,9 +185,8 @@
                     <h3 class="tournament-location">Gdańsk</h3>
                     <p class="tournament-venue">Arche Lotnisko</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
                         </svg>
                         30'+30"
                     </p>
@@ -224,7 +207,13 @@
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
-                        10'+5" i 3'+2"
+                        10'+5"
+                    </p>
+                    <p class="tournament-tempo">
+                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                        </svg>
+                        3'+2"
                     </p>
                 </div>
             </article>
@@ -240,28 +229,20 @@
 <!-- Sponsors Section -->
 <section class="sponsors-section" id="sponsorzy">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Partnerzy</h2>
+        <!-- Partner Główny -->
+        <div class="sponsor-main-wrapper animate-on-scroll">
+            <h2 class="sponsor-section-title">Partner Główny</h2>
+            <img src="~/sources/arche.svg" alt="Arche - Partner Główny" class="sponsor-logo sponsor-logo--main">
+        </div>
         
-        <div class="sponsors-grid">
-            <div class="sponsor sponsor--main animate-on-scroll">
-                <span class="sponsor-label">Partner Główny</span>
-                <img src="~/sources/arche.svg" alt="Arche - Partner Główny" class="sponsor-logo sponsor-logo--main">
-            </div>
-            <div class="sponsor animate-on-scroll">
-                <span class="sponsor-label">Partner</span>
-                <img src="~/sources/pzszach_vertical_full.png" alt="Polski Związek Szachowy - Partner" class="sponsor-logo">
-            </div>
-            <div class="sponsor animate-on-scroll">
-                <span class="sponsor-label">Partner</span>
-                <img src="~/sources/columbus.jpg" alt="Columbus - Partner" class="sponsor-logo">
-            </div>
-            <div class="sponsor animate-on-scroll">
-                <span class="sponsor-label">Partner</span>
-                <img src="~/sources/zinzino-logo.svg" alt="Zinzino - Partner" class="sponsor-logo">
-            </div>
-            <div class="sponsor animate-on-scroll">
-                <span class="sponsor-label">Partner</span>
-                <img src="~/sources/q4rails.svg" alt="Q4Rail - Partner" class="sponsor-logo">
+        <!-- Partnerzy -->
+        <div class="sponsors-other-wrapper animate-on-scroll">
+            <h3 class="sponsor-section-title sponsor-section-title--small">Partnerzy</h3>
+            <div class="sponsors-grid">
+                <img src="~/sources/pzszach_vertical_full.png" alt="Polski Związek Szachowy" class="sponsor-logo sponsor-logo--pzszach">
+                <img src="~/sources/columbus.jpg" alt="Columbus" class="sponsor-logo">
+                <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="sponsor-logo">
+                <img src="~/sources/q4rail.png" alt="Q4Rail" class="sponsor-logo">
             </div>
         </div>
     </div>

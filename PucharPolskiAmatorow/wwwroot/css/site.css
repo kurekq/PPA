@@ -276,6 +276,17 @@ section {
     margin-bottom: 0;
 }
 
+.info-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.info-link:hover {
+    color: var(--color-accent-hover);
+}
+
 .info-text--highlight {
     font-size: 1.25rem;
     font-weight: 600;
@@ -464,6 +475,15 @@ section {
     margin-bottom: 0.25rem;
 }
 
+.tournament-name--spaced {
+    margin-top: 0.5rem;
+}
+
+.tournament-sponsor-logo--large {
+    height: 32px;
+    max-width: 100px;
+}
+
 .tournament-date {
     display: flex;
     flex-direction: column;
@@ -524,6 +544,18 @@ section {
     flex-shrink: 0;
 }
 
+.tempo-icon--blitz {
+    color: #f59e0b;
+}
+
+.tempo-icon--classic {
+    color: #8b5a2b;
+}
+
+.tournament-location--spaced {
+    margin-top: 0.75rem;
+}
+
 /* Map */
 .map-container {
     margin-top: var(--spacing-lg);
@@ -546,27 +578,35 @@ section {
     padding: var(--spacing-2xl) 0;
 }
 
+.sponsor-main-wrapper {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.sponsor-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.sponsor-section-title--small {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-gray);
+}
+
+.sponsors-other-wrapper {
+    text-align: center;
+}
+
 .sponsors-grid {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--spacing-xl);
     flex-wrap: wrap;
-}
-
-.sponsor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.sponsor-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-gray);
 }
 
 .sponsor-logo {
@@ -577,12 +617,16 @@ section {
     object-fit: contain;
 }
 
-.sponsor-logo--main {
-    max-height: 100px;
+.sponsor-logo:hover {
+    transform: scale(1.05);
 }
 
-.sponsor:hover .sponsor-logo {
-    transform: scale(1.05);
+.sponsor-logo--main {
+    max-height: 120px;
+}
+
+.sponsor-logo--pzszach {
+    max-height: 160px;
 }
 
 /* ============================================
