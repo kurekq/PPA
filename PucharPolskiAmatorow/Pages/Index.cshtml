@@ -11,11 +11,11 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
+        <img src="~/sources/arche.svg" alt="Arche" class="hero-logo animate-fade-in">
         <h1 class="hero-title animate-fade-in">Puchar Polski Amatorów<br>w Szachach</h1>
-        <p class="hero-subtitle animate-fade-in-delay">Cykl 7 turniejów w całej Polsce</p>
+        <p class="hero-subtitle animate-fade-in-delay">1 cykl • 6 miast • 7 lokalizacji • 10 turniejów • ponad 100 000 zł w puli nagród</p>
         <div class="hero-buttons animate-fade-in-delay-2">
             <a href="#turnieje" class="btn-primary">Terminy i lokalizacje</a>
-            <a href="#" class="btn-secondary">Zapisz się</a>
         </div>
     </div>
     <div class="scroll-indicator animate-bounce">
@@ -48,6 +48,29 @@
                 Niezależnie od poziomu zaawansowania – każdy znajdzie tu coś dla siebie. 
                 Od szybkich partii blitz po klasyczne rozgrywki z kontrolą czasu. Dołącz do nas i odkryj magię turniejowych szachów!
             </p>
+            <p class="info-text info-text--highlight">
+                Bez względu na to, czy masz 5 czy 75 lat, czy grałeś już wcześniej w turniejach czy nie - Arche Puchar Polski Amatorów jest dla Ciebie!
+            </p>
+            
+            <!-- Ranking divisions -->
+            <div class="ranking-divisions">
+                <h3 class="ranking-title">Podziały rankingowe</h3>
+                <div class="ranking-badges">
+                    <span class="ranking-badge ranking-badge--beginner">0–1600</span>
+                    <span class="ranking-badge ranking-badge--intermediate">1601–1900</span>
+                    <span class="ranking-badge ranking-badge--advanced">1901–2200</span>
+                </div>
+            </div>
+            
+            <!-- Live streams -->
+            <div class="live-stream-info">
+                <a href="https://www.youtube.com/@PolskiZwiazekSzachowy" target="_blank" rel="noopener noreferrer" class="live-stream-link">
+                    <svg class="youtube-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    <span>Transmisje live na kanale YouTube PZSzach</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -59,13 +82,17 @@
         <p class="section-subtitle animate-on-scroll">Siedem wyjątkowych wydarzeń w całej Polsce</p>
         
         <div class="tournaments-grid">
-            <!-- Tournament 1 -->
+            <!-- Tournament 1 - Częstochowa Zinzino -->
             <article class="tournament-card animate-on-scroll">
+                <div class="tournament-sponsor">
+                    <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="tournament-sponsor-logo">
+                </div>
                 <div class="tournament-date">
                     <span class="day">21-22</span>
                     <span class="month">LUT</span>
                 </div>
                 <div class="tournament-info">
+                    <p class="tournament-name">Zinzino Rapid & Blitz Open</p>
                     <h3 class="tournament-location">Częstochowa</h3>
                     <p class="tournament-venue">Arche Hotel</p>
                     <p class="tournament-tempo">
@@ -78,14 +105,18 @@
                 </div>
             </article>
 
-            <!-- Tournament 2 -->
+            <!-- Tournament 2 - Krynica Columbus -->
             <article class="tournament-card tournament-card--featured animate-on-scroll">
+                <div class="tournament-sponsor">
+                    <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo">
+                </div>
                 <div class="tournament-badge">Mistrzostwa Polski</div>
                 <div class="tournament-date">
                     <span class="day">10-19</span>
                     <span class="month">KWI</span>
                 </div>
                 <div class="tournament-info">
+                    <p class="tournament-name">Columbus Mistrzostwa Polski</p>
                     <h3 class="tournament-location">Krynica-Zdrój</h3>
                     <p class="tournament-venue">Belmonte</p>
                     <p class="tournament-tempo">
@@ -156,13 +187,17 @@
                 </div>
             </article>
 
-            <!-- Tournament 6 -->
+            <!-- Tournament 6 - Gdańsk Q4Rail -->
             <article class="tournament-card animate-on-scroll">
+                <div class="tournament-sponsor">
+                    <img src="~/sources/q4rails.svg" alt="Q4Rail" class="tournament-sponsor-logo">
+                </div>
                 <div class="tournament-date">
                     <span class="day">16-18</span>
                     <span class="month">PAŹ</span>
                 </div>
                 <div class="tournament-info">
+                    <p class="tournament-name">Q4Rail Open</p>
                     <h3 class="tournament-location">Gdańsk</h3>
                     <p class="tournament-venue">Arche Lotnisko</p>
                     <p class="tournament-tempo">
@@ -214,7 +249,19 @@
             </div>
             <div class="sponsor animate-on-scroll">
                 <span class="sponsor-label">Partner</span>
+                <img src="~/sources/pzszach_vertical_full.png" alt="Polski Związek Szachowy - Partner" class="sponsor-logo">
+            </div>
+            <div class="sponsor animate-on-scroll">
+                <span class="sponsor-label">Partner</span>
                 <img src="~/sources/columbus.jpg" alt="Columbus - Partner" class="sponsor-logo">
+            </div>
+            <div class="sponsor animate-on-scroll">
+                <span class="sponsor-label">Partner</span>
+                <img src="~/sources/zinzino-logo.svg" alt="Zinzino - Partner" class="sponsor-logo">
+            </div>
+            <div class="sponsor animate-on-scroll">
+                <span class="sponsor-label">Partner</span>
+                <img src="~/sources/q4rails.svg" alt="Q4Rail - Partner" class="sponsor-logo">
             </div>
         </div>
     </div>
