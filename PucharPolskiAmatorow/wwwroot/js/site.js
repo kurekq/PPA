@@ -218,10 +218,37 @@
     function initTournamentCards() {
         const cards = document.querySelectorAll('.tournament-card');
         
+        // Symulujemy datę 1 kwietnia 2025 do testów
+        const today = new Date('2025-04-01');
+        today.setHours(0, 0, 0, 0);
+        
+        let finishedCount = 0;
+        
         cards.forEach(card => {
             // Add keyboard accessibility
             card.setAttribute('tabindex', '0');
             card.setAttribute('role', 'article');
+            
+            // Check if tournament has ended
+            const endDateStr = card.dataset.endDate;
+            if (endDateStr) {
+                const endDate = new Date(endDateStr);
+                endDate.setHours(23, 59, 59, 999);
+                
+                if (today > endDate) {
+                    card.classList.add('tournament-card--finished');
+                    finishedCount++;
+                    
+                    // Add "Zakończony" label at the bottom of tournament-info
+                    const info = card.querySelector('.tournament-info');
+                    if (info && !card.querySelector('.tournament-finished-label')) {
+                        const label = document.createElement('div');
+                        label.className = 'tournament-finished-label';
+                        label.textContent = 'Zakończony';
+                        info.appendChild(label);
+                    }
+                }
+            }
             
             // Hover effect enhancement
             card.addEventListener('mouseenter', function() {
@@ -230,6 +257,82 @@
             
             card.addEventListener('mouseleave', function() {
                 this.style.zIndex = '';
+            });
+        });
+        
+        // Update finished count in leaderboard
+        const countEl = document.getElementById('finished-count');
+        if (countEl) {
+            countEl.textContent = finishedCount;
+        }
+    }
+
+    // ============================================
+    // SCORING TABS
+    // ============================================
+    function initScoringTabs() {
+        const tabs = document.querySelectorAll('.scoring-tab');
+        const panels = document.querySelectorAll('.scoring-panel');
+        
+        if (!tabs.length) return;
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetPanel = tab.dataset.tab;
+                
+                // Update tabs
+                tabs.forEach(t => t.classList.remove('scoring-tab--active'));
+                tab.classList.add('scoring-tab--active');
+                
+                // Update panels
+                panels.forEach(panel => {
+                    if (panel.dataset.panel === targetPanel) {
+                        panel.classList.add('scoring-panel--active');
+                    } else {
+                        panel.classList.remove('scoring-panel--active');
+                    }
+                });
+            });
+        });
+        
+        // Expand buttons
+        const expandButtons = document.querySelectorAll('.scoring-expand');
+        
+        expandButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const panel = btn.closest('.scoring-panel');
+                const extendedList = panel.querySelector('.scoring-list-extended');
+                
+                if (extendedList.style.display === 'none') {
+                    extendedList.style.display = 'flex';
+                    btn.textContent = 'Zwiń punktację';
+                } else {
+                    extendedList.style.display = 'none';
+                    btn.textContent = 'Pokaż pełną punktację (1–20)';
+                }
+            });
+        });
+        
+        // Leaderboard tabs
+        const leaderboardTabs = document.querySelectorAll('.leaderboard-tab');
+        const leaderboardPanels = document.querySelectorAll('.leaderboard-panel');
+        
+        leaderboardTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetPanel = tab.dataset.group;
+                
+                // Update tabs
+                leaderboardTabs.forEach(t => t.classList.remove('leaderboard-tab--active'));
+                tab.classList.add('leaderboard-tab--active');
+                
+                // Update panels
+                leaderboardPanels.forEach(panel => {
+                    if (panel.dataset.panel === targetPanel) {
+                        panel.classList.add('leaderboard-panel--active');
+                    } else {
+                        panel.classList.remove('leaderboard-panel--active');
+                    }
+                });
             });
         });
     }
@@ -264,6 +367,7 @@
         initLazyLoading();
         initAccessibility();
         initTournamentCards();
+        initScoringTabs();
     }
 
     // Run on DOM ready

@@ -42,12 +42,284 @@
             
             <!-- Ranking divisions -->
             <div class="ranking-divisions">
-                <h3 class="ranking-title">Podziały rankingowe</h3>
+                <h3 class="ranking-title">Klasyfikacja generalna – grupy rankingowe</h3>
+                <p class="ranking-description">To nie są osobne turnieje (wyjątek: Columbus Mistrzostwa Polski). W każdym etapie grasz w jednym turnieju, a punkty trafiają do klasyfikacji generalnej. Klasyfikacje roczne prowadzone są w poniższych grupach rankingowych.</p>
                 <div class="ranking-badges">
-                    <span class="ranking-badge ranking-badge--beginner">0–1600</span>
-                    <span class="ranking-badge ranking-badge--intermediate">1601–1900</span>
-                    <span class="ranking-badge ranking-badge--advanced">1901–2200</span>
+                    <span class="ranking-badge ranking-badge--beginner">Grupa A: 0–1600</span>
+                    <span class="ranking-badge ranking-badge--intermediate">Grupa B: 1601–1900</span>
+                    <span class="ranking-badge ranking-badge--advanced">Grupa C: 1901–2200</span>
                 </div>
+            </div>
+            
+            <!-- Scoring System -->
+            <div class="scoring-section">
+                <h3 class="scoring-title">Punktacja</h3>
+                <p class="scoring-description">Punkty zdobyte w poszczególnych turniejach trafiają do klasyfikacji generalnej. W zależności od tempa gry obowiązuje inna skala punktowa.</p>
+                
+                <!-- Tabs -->
+                <div class="scoring-tabs">
+                    <button class="scoring-tab scoring-tab--active" data-tab="classic-long">
+                        <svg class="scoring-tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span class="scoring-tab-text">Klasyk długi</span>
+                        <span class="scoring-tab-tempo">90+30</span>
+                    </button>
+                    <button class="scoring-tab" data-tab="classic-short">
+                        <svg class="scoring-tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span class="scoring-tab-text">Klasyk krótki</span>
+                        <span class="scoring-tab-tempo">60+30 / 30+30</span>
+                    </button>
+                    <button class="scoring-tab" data-tab="rapid">
+                        <svg class="scoring-tab-icon tempo-icon--rapid" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                        </svg>
+                        <span class="scoring-tab-text">Rapid</span>
+                        <span class="scoring-tab-tempo">10+5</span>
+                    </button>
+                    <button class="scoring-tab" data-tab="blitz">
+                        <svg class="scoring-tab-icon tempo-icon--blitz" width="20" height="16" viewBox="0 0 32 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            <path d="M19 21h-1l1-7h-3.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C16.48 10.94 18.42 7.54 21 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C20.96 17.55 19 21 19 21z"/>
+                        </svg>
+                        <span class="scoring-tab-text">Blitz</span>
+                        <span class="scoring-tab-tempo">3+2 / 5+3</span>
+                    </button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="scoring-content">
+                    <!-- Classic Long -->
+                    <div class="scoring-panel scoring-panel--active" data-panel="classic-long">
+                        <div class="scoring-list">
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">100 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">80 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">65 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">55 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">45 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">37 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">30 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">25 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">20 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">15 pkt</span></div>
+                        </div>
+                        <div class="scoring-list-extended" style="display: none;">
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">12 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">8 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">7 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">5 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                        </div>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                    </div>
+                    
+                    <!-- Classic Short -->
+                    <div class="scoring-panel" data-panel="classic-short">
+                        <div class="scoring-list">
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">70 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">56 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">45 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">38 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">31 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">26 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">21 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">17 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">14 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">10 pkt</span></div>
+                        </div>
+                        <div class="scoring-list-extended" style="display: none;">
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">8 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">7 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">5 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                        </div>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                    </div>
+                    
+                    <!-- Rapid -->
+                    <div class="scoring-panel" data-panel="rapid">
+                        <div class="scoring-list">
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">50 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">40 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">32 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">27 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">22 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">18 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">15 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">12 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">7 pkt</span></div>
+                        </div>
+                        <div class="scoring-list-extended" style="display: none;">
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">5 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                        </div>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                    </div>
+                    
+                    <!-- Blitz -->
+                    <div class="scoring-panel" data-panel="blitz">
+                        <div class="scoring-list">
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">30 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">24 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">19 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">16 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">13 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">11 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">9 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">7 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">4 pkt</span></div>
+                        </div>
+                        <div class="scoring-list-extended" style="display: none;">
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                        </div>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leaderboard -->
+            <div class="leaderboard-section">
+                <h3 class="leaderboard-title">Klasyfikacja generalna – TOP 5</h3>
+                <p class="leaderboard-description">Wyniki po <span id="finished-count">0</span>/10 turniejów</p>
+                
+                <div class="leaderboard-tabs">
+                    <button class="leaderboard-tab leaderboard-tab--active" data-group="a">Grupa A (0–1600)</button>
+                    <button class="leaderboard-tab" data-group="b">Grupa B (1601–1900)</button>
+                    <button class="leaderboard-tab" data-group="c">Grupa C (1901–2200)</button>
+                </div>
+                
+                <div class="leaderboard-content">
+                    <!-- Grupa A -->
+                    <div class="leaderboard-panel leaderboard-panel--active" data-panel="a">
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item leaderboard-item--gold">
+                                <span class="leaderboard-rank">1</span>
+                                <span class="leaderboard-name">Jan Kowalski</span>
+                                <span class="leaderboard-points">85 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--silver">
+                                <span class="leaderboard-rank">2</span>
+                                <span class="leaderboard-name">Anna Nowak</span>
+                                <span class="leaderboard-points">72 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--bronze">
+                                <span class="leaderboard-rank">3</span>
+                                <span class="leaderboard-name">Piotr Wiśniewski</span>
+                                <span class="leaderboard-points">68 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">4</span>
+                                <span class="leaderboard-name">Maria Wójcik</span>
+                                <span class="leaderboard-points">55 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">5</span>
+                                <span class="leaderboard-name">Tomasz Kamiński</span>
+                                <span class="leaderboard-points">48 pkt</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grupa B -->
+                    <div class="leaderboard-panel" data-panel="b">
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item leaderboard-item--gold">
+                                <span class="leaderboard-rank">1</span>
+                                <span class="leaderboard-name">Krzysztof Lewandowski</span>
+                                <span class="leaderboard-points">92 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--silver">
+                                <span class="leaderboard-rank">2</span>
+                                <span class="leaderboard-name">Magdalena Zielińska</span>
+                                <span class="leaderboard-points">78 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--bronze">
+                                <span class="leaderboard-rank">3</span>
+                                <span class="leaderboard-name">Andrzej Szymański</span>
+                                <span class="leaderboard-points">71 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">4</span>
+                                <span class="leaderboard-name">Katarzyna Woźniak</span>
+                                <span class="leaderboard-points">63 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">5</span>
+                                <span class="leaderboard-name">Michał Dąbrowski</span>
+                                <span class="leaderboard-points">57 pkt</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grupa C -->
+                    <div class="leaderboard-panel" data-panel="c">
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item leaderboard-item--gold">
+                                <span class="leaderboard-rank">1</span>
+                                <span class="leaderboard-name">Jakub Mazur</span>
+                                <span class="leaderboard-points">105 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--silver">
+                                <span class="leaderboard-rank">2</span>
+                                <span class="leaderboard-name">Aleksandra Krawczyk</span>
+                                <span class="leaderboard-points">89 pkt</span>
+                            </div>
+                            <div class="leaderboard-item leaderboard-item--bronze">
+                                <span class="leaderboard-rank">3</span>
+                                <span class="leaderboard-name">Robert Piotrowski</span>
+                                <span class="leaderboard-points">76 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">4</span>
+                                <span class="leaderboard-name">Natalia Grabowska</span>
+                                <span class="leaderboard-points">68 pkt</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="leaderboard-rank">5</span>
+                                <span class="leaderboard-name">Bartosz Pawlak</span>
+                                <span class="leaderboard-points">61 pkt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://docs.google.com/spreadsheets/d/14TsKqiu0MckraUb6yyTFpQ06acFIX-zCHN4vvUGiH4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="leaderboard-link">
+                    Zobacz wszystkie wyniki →
+                </a>
             </div>
         </div>
     </div>
@@ -58,7 +330,7 @@
     <div class="container">
         <div class="tournaments-grid">
             <!-- Tournament 1 - Częstochowa Zinzino -->
-            <article class="tournament-card animate-on-scroll">
+            <article class="tournament-card animate-on-scroll" data-end-date="2025-02-22">
                 <div class="tournament-sponsor">
                     <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="tournament-sponsor-logo">
                 </div>
@@ -71,23 +343,24 @@
                     <h3 class="tournament-location">Częstochowa</h3>
                     <p class="tournament-venue">Arche Hotel</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--rapid" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
                         </svg>
                         10'+5"
                     </p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="tempo-icon tempo-icon--blitz" width="20" height="16" viewBox="0 0 32 24" fill="currentColor">
                             <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            <path d="M19 21h-1l1-7h-3.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C16.48 10.94 18.42 7.54 21 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C20.96 17.55 19 21 19 21z"/>
                         </svg>
                         3'+2"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
 
             <!-- Tournament 2 - Krynica Columbus -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll">
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-04-19">
                 <div class="tournament-sponsor">
                     <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo tournament-sponsor-logo--large">
                 </div>
@@ -101,16 +374,18 @@
                     <h3 class="tournament-location">Krynica-Zdrój</h3>
                     <p class="tournament-venue">Belmonte</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                         90'+30"
                     </p>
+                    <a href="https://www.chessmanager.com/pl-pl/tournaments/4870466005893120" target="_blank" rel="noopener noreferrer" class="tournament-btn">Serwis turniejowy</a>
                 </div>
             </article>
 
             <!-- Tournament 3 -->
-            <article class="tournament-card animate-on-scroll">
+            <article class="tournament-card animate-on-scroll" data-end-date="2025-05-03">
                 <div class="tournament-date">
                     <span class="day">1-3</span>
                     <span class="month">MAJ</span>
@@ -119,16 +394,18 @@
                     <h3 class="tournament-location">Wrocław Airport</h3>
                     <p class="tournament-venue">Arche Hotel</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                         60'+30"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
 
             <!-- Tournament 4 -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll">
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2025-06-07">
                 <div class="tournament-badge">MP w szachach szybkich</div>
                 <div class="tournament-date">
                     <span class="day">6-7</span>
@@ -138,23 +415,24 @@
                     <h3 class="tournament-location tournament-location--spaced">Warszawa</h3>
                     <p class="tournament-venue">Arche Hotel Krakowska</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--rapid" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
                         </svg>
                         10'+5"
                     </p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="tempo-icon tempo-icon--blitz" width="20" height="16" viewBox="0 0 32 24" fill="currentColor">
                             <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            <path d="M19 21h-1l1-7h-3.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C16.48 10.94 18.42 7.54 21 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C20.96 17.55 19 21 19 21z"/>
                         </svg>
                         3'+2"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
 
             <!-- Tournament 5 -->
-            <article class="tournament-card animate-on-scroll">
+            <article class="tournament-card animate-on-scroll" data-end-date="2025-07-30">
                 <div class="tournament-date">
                     <span class="day">24-30</span>
                     <span class="month">LIP</span>
@@ -163,16 +441,18 @@
                     <h3 class="tournament-location">Warszawa</h3>
                     <p class="tournament-venue">Arche Puławska Residence</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                         90'+30"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
 
             <!-- Tournament 6 - Gdańsk Q4Rail -->
-            <article class="tournament-card animate-on-scroll">
+            <article class="tournament-card animate-on-scroll" data-end-date="2025-10-18">
                 <div class="tournament-sponsor">
                     <img src="~/sources/q4rail.png" alt="Q4Rail" class="tournament-sponsor-logo">
                 </div>
@@ -185,16 +465,18 @@
                     <h3 class="tournament-location">Gdańsk</h3>
                     <p class="tournament-venue">Arche Lotnisko</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--classic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 2h12v2H6zM6 20h12v2H6zM7 4v2c0 2.5 1.5 4.5 4 5.5v1c-2.5 1-4 3-4 5.5v2h10v-2c0-2.5-1.5-4.5-4-5.5v-1c2.5-1 4-3 4-5.5V4H7z"/>
+                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                         30'+30"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
 
             <!-- Tournament 7 -->
-            <article class="tournament-card animate-on-scroll">
+            <article class="tournament-card animate-on-scroll" data-end-date="2025-11-15">
                 <div class="tournament-date">
                     <span class="day">14-15</span>
                     <span class="month">LIS</span>
@@ -203,18 +485,19 @@
                     <h3 class="tournament-location">Żnin</h3>
                     <p class="tournament-venue">Arche Cukrownia</p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                        <svg class="tempo-icon tempo-icon--rapid" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
                         </svg>
                         10'+5"
                     </p>
                     <p class="tournament-tempo">
-                        <svg class="tempo-icon tempo-icon--blitz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="tempo-icon tempo-icon--blitz" width="20" height="16" viewBox="0 0 32 24" fill="currentColor">
                             <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            <path d="M19 21h-1l1-7h-3.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C16.48 10.94 18.42 7.54 21 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C20.96 17.55 19 21 19 21z"/>
                         </svg>
                         3'+2"
                     </p>
+                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
                 </div>
             </article>
         </div>
@@ -238,7 +521,7 @@
         <!-- Partnerzy -->
         <div class="sponsors-other-wrapper animate-on-scroll">
             <h3 class="sponsor-section-title sponsor-section-title--small">Partnerzy</h3>
-            <div class="sponsors-grid">
+        <div class="sponsors-grid">
                 <img src="~/sources/pzszach_vertical_full.png" alt="Polski Związek Szachowy" class="sponsor-logo sponsor-logo--pzszach">
                 <img src="~/sources/columbus.jpg" alt="Columbus" class="sponsor-logo">
                 <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="sponsor-logo">
@@ -251,34 +534,58 @@
 <!-- Organizers Section -->
 <section class="organizers-section" id="organizatorzy">
     <div class="container">
-        <h2 class="section-title animate-on-scroll">Organizatorzy</h2>
+        <h2 class="section-title animate-on-scroll">Organizator</h2>
         
         <div class="organizers-grid">
+            <!-- Organizator -->
             <div class="organizer-card animate-on-scroll">
                 <div class="organizer-image-wrapper">
-                    <img src="~/sources/zbigniew.jpg" alt="Zbigniew Pakleza - Organizator" class="organizer-image" loading="lazy">
+                    <img src="~/sources/koc.png" alt="Klub Sportowy Kingsofchess Kraków" class="organizer-image" loading="lazy">
+                </div>
+                <h3 class="organizer-name">Klub Sportowy Kingsofchess Kraków</h3>
+                <p class="organizer-role">Organizator</p>
+                <div class="organizer-contact">
+                    <a href="mailto:kontakt@kingsofchess.pl" class="organizer-email">
+                        <svg class="organizer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        kontakt@kingsofchess.pl
+                    </a>
+                    <a href="tel:+48780555156" class="organizer-phone">
+                        <svg class="organizer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +48 780 555 156
+                    </a>
+                    <a href="https://www.kingsofchess.pl" target="_blank" rel="noopener noreferrer" class="organizer-website">
+                        <svg class="organizer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        www.kingsofchess.pl
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Dyrektor -->
+            <div class="organizer-card animate-on-scroll">
+                <div class="organizer-image-wrapper">
+                    <img src="~/sources/zbigniew.jpg" alt="Zbigniew Pakleza - Dyrektor" class="organizer-image" loading="lazy">
                 </div>
                 <h3 class="organizer-name">Zbigniew Pakleza</h3>
-                <p class="organizer-role">Organizator</p>
-                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
-            </div>
-            
-            <div class="organizer-card animate-on-scroll">
-                <div class="organizer-image-wrapper">
-                    <img src="~/sources/artur.jpg" alt="Artur Jakubiec - Organizator" class="organizer-image" loading="lazy">
+                <p class="organizer-role">Dyrektor</p>
+                <div class="organizer-contact">
+                    <a href="https://www.zbigniewpakleza.pl" target="_blank" rel="noopener noreferrer" class="organizer-website">
+                        <svg class="organizer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        www.zbigniewpakleza.pl
+                    </a>
                 </div>
-                <h3 class="organizer-name">Artur Jakubiec</h3>
-                <p class="organizer-role">Organizator</p>
-                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
-            </div>
-            
-            <div class="organizer-card animate-on-scroll">
-                <div class="organizer-image-wrapper">
-                    <img src="~/sources/koc.png" alt="Klub KOC" class="organizer-image" loading="lazy">
-                </div>
-                <h3 class="organizer-name">Klub KOC</h3>
-                <p class="organizer-role">Współorganizator</p>
-                <a href="mailto:kontakt@example.com" class="organizer-email">kontakt@example.com</a>
             </div>
         </div>
     </div>
