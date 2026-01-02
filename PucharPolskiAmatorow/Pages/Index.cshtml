@@ -6,9 +6,10 @@
 
 <!-- Hero Section -->
 <section class="hero" id="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-        <source src="~/sources/film_arche.mp4" type="video/mp4">
+    <video id="hero-video" class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source id="hero-video-source" src="~/sources/film_arche.mp4" type="video/mp4">
     </video>
+    <img id="hero-image" class="hero-image" src="~/sources/arche_znin.jpg" alt="Arche Żnin" style="display: none;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <img src="~/sources/arche.svg" alt="Arche" class="hero-logo animate-fade-in">
@@ -43,7 +44,7 @@
             <!-- Ranking divisions -->
             <div class="ranking-divisions">
                 <h3 class="ranking-title">Klasyfikacja generalna – grupy rankingowe</h3>
-                <p class="ranking-description">To nie są osobne turnieje (wyjątek: Columbus Mistrzostwa Polski). W każdym etapie grasz w jednym turnieju, a punkty trafiają do klasyfikacji generalnej. Klasyfikacje roczne prowadzone są w poniższych grupach rankingowych.</p>
+                <p class="ranking-description">Z wyjątkiem Columbus Mistrzostw Polski Amatorów, turnieje nie będą dzielone na grupy rankingowe (wszyscy grają ze sobą). Klasyfikacja generalna punktacji za każdy turniej będzie naliczona osobno. Poniżej zasady i aktualni liderzy.</p>
                 <div class="ranking-badges">
                     <span class="ranking-badge ranking-badge--beginner">Grupa A: 0–1600</span>
                     <span class="ranking-badge ranking-badge--intermediate">Grupa B: 1601–1900</span>
@@ -228,27 +229,27 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Jan Kowalski</span>
+                                <span class="leaderboard-name">Magnus Carlsen</span>
                                 <span class="leaderboard-points">85 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Anna Nowak</span>
+                                <span class="leaderboard-name">Ding Liren</span>
                                 <span class="leaderboard-points">72 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--bronze">
                                 <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">Piotr Wiśniewski</span>
+                                <span class="leaderboard-name">Ian Nepomniachtchi</span>
                                 <span class="leaderboard-points">68 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Maria Wójcik</span>
+                                <span class="leaderboard-name">Fabiano Caruana</span>
                                 <span class="leaderboard-points">55 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Tomasz Kamiński</span>
+                                <span class="leaderboard-name">Hikaru Nakamura</span>
                                 <span class="leaderboard-points">48 pkt</span>
                             </div>
                         </div>
@@ -259,27 +260,27 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Krzysztof Lewandowski</span>
+                                <span class="leaderboard-name">Alireza Firouzja</span>
                                 <span class="leaderboard-points">92 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Magdalena Zielińska</span>
+                                <span class="leaderboard-name">Wesley So</span>
                                 <span class="leaderboard-points">78 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--bronze">
                                 <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">Andrzej Szymański</span>
+                                <span class="leaderboard-name">Anish Giri</span>
                                 <span class="leaderboard-points">71 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Katarzyna Woźniak</span>
+                                <span class="leaderboard-name">Levon Aronian</span>
                                 <span class="leaderboard-points">63 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Michał Dąbrowski</span>
+                                <span class="leaderboard-name">Maxime Vachier-Lagrave</span>
                                 <span class="leaderboard-points">57 pkt</span>
                             </div>
                         </div>
@@ -290,27 +291,27 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Jakub Mazur</span>
+                                <span class="leaderboard-name">Teimour Radjabov</span>
                                 <span class="leaderboard-points">105 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Aleksandra Krawczyk</span>
+                                <span class="leaderboard-name">Nodirbek Abdusattorov</span>
                                 <span class="leaderboard-points">89 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--bronze">
                                 <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">Robert Piotrowski</span>
+                                <span class="leaderboard-name">R Praggnanandhaa</span>
                                 <span class="leaderboard-points">76 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Natalia Grabowska</span>
+                                <span class="leaderboard-name">Gukesh D</span>
                                 <span class="leaderboard-points">68 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Bartosz Pawlak</span>
+                                <span class="leaderboard-name">Wei Yi</span>
                                 <span class="leaderboard-points">61 pkt</span>
                             </div>
                         </div>
@@ -360,7 +361,7 @@
             </article>
 
             <!-- Tournament 2 - Krynica Columbus -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-04-19">
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2025-04-19">
                 <div class="tournament-sponsor">
                     <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo tournament-sponsor-logo--large">
                 </div>

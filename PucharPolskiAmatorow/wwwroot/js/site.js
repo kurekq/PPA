@@ -213,6 +213,65 @@
     }
 
     // ============================================
+    // HERO MEDIA - Dynamic video/image based on date
+    // ============================================
+    function initHeroMedia() {
+        const video = document.getElementById('hero-video');
+        const videoSource = document.getElementById('hero-video-source');
+        const image = document.getElementById('hero-image');
+        
+        if (!video || !videoSource || !image) return;
+        
+        // Symulujemy datę 1 kwietnia 2025 do testów
+        const today = new Date('2025-04-01');
+        
+        // Daty końca turniejów
+        const dates = {
+            czestochowa: new Date('2025-02-22'),
+            krynica: new Date('2025-04-19'),
+            gdansk: new Date('2025-10-18'),
+            znin: new Date('2025-11-15')
+        };
+        
+        // Media files
+        const media = {
+            czestochowa: { type: 'video', src: '/sources/film_arche.mp4' },
+            krynica: { type: 'video', src: '/sources/film_krynica_zdroj.mp4' },
+            warszawa: { type: 'video', src: '/sources/arche_warszawa.mp4' },
+            znin: { type: 'image', src: '/sources/arche_znin.jpg' }
+        };
+        
+        let selectedMedia;
+        
+        // Logika wyboru mediów
+        if (today <= dates.czestochowa) {
+            // Przed Częstochową - film Częstochowa
+            selectedMedia = media.czestochowa;
+        } else if (today <= dates.krynica) {
+            // Po Częstochowie, przed Krynicą - film Krynica
+            selectedMedia = media.krynica;
+        } else if (today <= dates.gdansk) {
+            // Po Krynicy, przed Gdańskiem - film Warszawa
+            selectedMedia = media.warszawa;
+        } else {
+            // Po Gdańsku (przed Żninem i po) - zdjęcie Żnin
+            selectedMedia = media.znin;
+        }
+        
+        // Zastosuj wybrane media
+        if (selectedMedia.type === 'video') {
+            video.style.display = '';
+            image.style.display = 'none';
+            videoSource.src = selectedMedia.src;
+            video.load();
+        } else {
+            video.style.display = 'none';
+            image.style.display = '';
+            image.src = selectedMedia.src;
+        }
+    }
+
+    // ============================================
     // TOURNAMENT CARD INTERACTIONS
     // ============================================
     function initTournamentCards() {
@@ -361,6 +420,7 @@
         checkReducedMotion();
         initSmoothScrolling();
         initScrollAnimations();
+        initHeroMedia();
         initVideoOptimization();
         initParallax();
         initScrollIndicator();
