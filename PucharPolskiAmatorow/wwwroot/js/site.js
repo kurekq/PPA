@@ -222,15 +222,15 @@
         
         if (!video || !videoSource || !image) return;
         
-        // Symulujemy datę 1 kwietnia 2025 do testów
-        const today = new Date('2025-04-01');
+        // Aktualna data
+        const today = new Date();
         
         // Daty końca turniejów
         const dates = {
-            czestochowa: new Date('2025-02-22'),
-            krynica: new Date('2025-04-19'),
-            gdansk: new Date('2025-10-18'),
-            znin: new Date('2025-11-15')
+            czestochowa: new Date('2026-02-22'),
+            krynica: new Date('2026-04-19'),
+            gdansk: new Date('2026-10-18'),
+            znin: new Date('2026-11-15')
         };
         
         // Media files
@@ -277,8 +277,8 @@
     function initTournamentCards() {
         const cards = document.querySelectorAll('.tournament-card');
         
-        // Symulujemy datę 1 kwietnia 2025 do testów
-        const today = new Date('2025-04-01');
+        // Aktualna data
+        const today = new Date();
         today.setHours(0, 0, 0, 0);
         
         let finishedCount = 0;
@@ -323,6 +323,23 @@
         const countEl = document.getElementById('finished-count');
         if (countEl) {
             countEl.textContent = finishedCount;
+        }
+        
+        // Show/hide leaderboard based on finished tournaments
+        const leaderboardPlaceholder = document.getElementById('leaderboard-placeholder');
+        const leaderboardContent = document.getElementById('leaderboard-content');
+        const leaderboardLink = document.getElementById('leaderboard-link');
+        
+        if (finishedCount === 0) {
+            // No finished tournaments - show placeholder, hide content
+            if (leaderboardPlaceholder) leaderboardPlaceholder.classList.remove('hidden');
+            if (leaderboardContent) leaderboardContent.classList.add('hidden');
+            if (leaderboardLink) leaderboardLink.classList.add('hidden');
+        } else {
+            // Has finished tournaments - hide placeholder, show content
+            if (leaderboardPlaceholder) leaderboardPlaceholder.classList.add('hidden');
+            if (leaderboardContent) leaderboardContent.classList.remove('hidden');
+            if (leaderboardLink) leaderboardLink.classList.remove('hidden');
         }
     }
 
@@ -414,6 +431,67 @@
     }
 
     // ============================================
+    // FAQ ACCORDION
+    // ============================================
+    function initFaqAccordion() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        if (!faqItems.length) return;
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            if (!question || !answer) return;
+            
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('faq-item--open');
+                
+                // Close all other items (optional - remove for multi-open)
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('faq-item--open');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
+                        if (otherAnswer) otherAnswer.hidden = true;
+                    }
+                });
+                
+                // Toggle current item
+                if (isOpen) {
+                    item.classList.remove('faq-item--open');
+                    question.setAttribute('aria-expanded', 'false');
+                    answer.hidden = true;
+                } else {
+                    item.classList.add('faq-item--open');
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.hidden = false;
+                }
+            });
+            
+            // Keyboard support
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+        
+        // Open first item on desktop by default
+        if (window.innerWidth > 768 && faqItems.length > 0) {
+            const firstItem = faqItems[0];
+            const firstQuestion = firstItem.querySelector('.faq-question');
+            const firstAnswer = firstItem.querySelector('.faq-answer');
+            
+            firstItem.classList.add('faq-item--open');
+            if (firstQuestion) firstQuestion.setAttribute('aria-expanded', 'true');
+            if (firstAnswer) firstAnswer.hidden = false;
+        }
+    }
+
+    // ============================================
     // INITIALIZATION
     // ============================================
     function init() {
@@ -428,6 +506,7 @@
         initAccessibility();
         initTournamentCards();
         initScoringTabs();
+        initFaqAccordion();
     }
 
     // Run on DOM ready

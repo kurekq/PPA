@@ -223,7 +223,12 @@
                     <button class="leaderboard-tab" data-group="c">Grupa C (1901–2200)</button>
                 </div>
                 
-                <div class="leaderboard-content">
+                <!-- Komunikat przed pierwszym turniejem -->
+                <div class="leaderboard-placeholder" id="leaderboard-placeholder">
+                    <p class="leaderboard-placeholder-text">Klasyfikacja będzie dostępna po zakończeniu pierwszego turnieju cyklu.</p>
+                </div>
+                
+                <div class="leaderboard-content" id="leaderboard-content">
                     <!-- Grupa A -->
                     <div class="leaderboard-panel leaderboard-panel--active" data-panel="a">
                         <div class="leaderboard-list">
@@ -318,7 +323,7 @@
                     </div>
                 </div>
                 
-                <a href="https://docs.google.com/spreadsheets/d/14TsKqiu0MckraUb6yyTFpQ06acFIX-zCHN4vvUGiH4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="leaderboard-link">
+                <a href="https://docs.google.com/spreadsheets/d/14TsKqiu0MckraUb6yyTFpQ06acFIX-zCHN4vvUGiH4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="leaderboard-link" id="leaderboard-link">
                     Zobacz wszystkie wyniki →
                 </a>
             </div>
@@ -331,7 +336,7 @@
     <div class="container">
         <div class="tournaments-grid">
             <!-- Tournament 1 - Częstochowa Zinzino -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2025-02-22">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-02-22">
                 <div class="tournament-sponsor">
                     <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="tournament-sponsor-logo">
                 </div>
@@ -356,12 +361,12 @@
                         </svg>
                         3'+2"
                     </p>
-                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
+                    <a href="https://www.chessmanager.com/pl-pl/tournaments/6200886652829696" target="_blank" rel="noopener noreferrer" class="tournament-btn">Serwis turniejowy</a>
                 </div>
             </article>
 
             <!-- Tournament 2 - Krynica Columbus -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2025-04-19">
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-04-19">
                 <div class="tournament-sponsor">
                     <img src="~/sources/columbus.jpg" alt="Columbus" class="tournament-sponsor-logo tournament-sponsor-logo--large">
                 </div>
@@ -386,7 +391,7 @@
             </article>
 
             <!-- Tournament 3 -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2025-05-03">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-05-03">
                 <div class="tournament-date">
                     <span class="day">1-3</span>
                     <span class="month">MAJ</span>
@@ -406,7 +411,7 @@
             </article>
 
             <!-- Tournament 4 -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2025-06-07">
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-06-07">
                 <div class="tournament-badge">MP w szachach szybkich</div>
                 <div class="tournament-date">
                     <span class="day">6-7</span>
@@ -433,7 +438,7 @@
             </article>
 
             <!-- Tournament 5 -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2025-07-30">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-07-30">
                 <div class="tournament-date">
                     <span class="day">24-30</span>
                     <span class="month">LIP</span>
@@ -453,7 +458,7 @@
             </article>
 
             <!-- Tournament 6 - Gdańsk Q4Rail -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2025-10-18">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-10-18">
                 <div class="tournament-sponsor">
                     <img src="~/sources/q4rail.png" alt="Q4Rail" class="tournament-sponsor-logo">
                 </div>
@@ -477,7 +482,7 @@
             </article>
 
             <!-- Tournament 7 -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2025-11-15">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-11-15">
                 <div class="tournament-date">
                     <span class="day">14-15</span>
                     <span class="month">LIS</span>
@@ -503,6 +508,214 @@
             </article>
         </div>
 
+        <!-- FAQ Section -->
+        <div class="faq-wrapper" id="faq">
+            <div class="faq-container">
+                <!-- Link do regulaminu -->
+                <div class="faq-regulation animate-on-scroll">
+                    <span class="faq-regulation-link faq-regulation-link--disabled">
+                        <svg class="faq-regulation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                        Regulamin (PDF)
+                    </span>
+                    <span class="faq-regulation-desc">(w przygotowaniu)</span>
+                </div>
+
+                <div hidden>
+                <h2 class="faq-title animate-on-scroll">FAQ – Puchar Polski Amatorów 2026</h2>
+                <p class="faq-description animate-on-scroll">Najważniejsze zasady w skrócie. Szczegóły są w regulaminie PDF.</p>
+
+                <div class="faq-accordion">
+            <!-- FAQ 1 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Czym jest Puchar Polski Amatorów?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>To cykl turniejów szachowych rozgrywanych w ciągu jednego roku kalendarzowego. Na podstawie wyników z poszczególnych turniejów tworzona jest klasyfikacja generalna, która wyłania zdobywców Pucharu Polski Amatorów w trzech grupach rankingowych.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Kto może wziąć udział w zawodach?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Możesz zagrać, jeśli:</p>
+                    <ul>
+                        <li>nie posiadasz tytułu GM, WGM ani IM,</li>
+                        <li>Twój ranking FIDE w danym tempie gry nie przekracza 2200 w momencie odprawy technicznej,</li>
+                        <li>jesteś zarejestrowany na liście FIDE (dotyczy zarówno zawodników polskich, jak i zagranicznych).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Jakie są grupy startowe?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Każdy turniej rozgrywany jest w formule open, z podziałem na trzy grupy rankingowe:</p>
+                    <ul>
+                        <li>Grupa I: ranking FIDE 1901–2200</li>
+                        <li>Grupa II: ranking FIDE 1601–1900</li>
+                        <li>Grupa III: ranking FIDE do 1600 lub brak rankingu</li>
+                    </ul>
+                    <p>Podział dotyczy klasyfikacji, nie samej możliwości gry.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do której grupy zostanę przypisany w klasyfikacji generalnej?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Decydują rankingi FIDE (klasyczny, szybki i błyskawiczny) obowiązujące na dzień 1 stycznia 2026 roku.</p>
+                    <p><strong>Zasady przypisania:</strong></p>
+                    <ul>
+                        <li>jeśli masz trzy rankingi i wszystkie kwalifikują do tej samej grupy → przypisanie do tej grupy,</li>
+                        <li>jeśli masz trzy rankingi i każdy kwalifikuje do innej grupy → przypisanie do grupy II (do 1900),</li>
+                        <li>jeśli masz dwa rankingi kwalifikujące do tej samej grupy → przypisanie do tej grupy niezależnie od trzeciego rankingu,</li>
+                        <li>jeśli masz dwa rankingi kwalifikujące do różnych grup → przypisanie do grupy wynikającej z niższego rankingu,</li>
+                        <li>jeśli masz tylko jeden ranking FIDE → przypisanie do grupy III (do 1600),</li>
+                        <li>jeśli nie masz rankingu FIDE → przypisanie do grupy III (do 1600).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Jak zgłosić się do turnieju?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Zgłoszenia odbywają się oddzielnie do każdego turnieju, w sposób określony w komunikacie organizacyjnym danego etapu.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Czy turnieje są zgłaszane do rankingu FIDE?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Tak. Zawody rozgrywane są zgodnie z przepisami FIDE i PZSzach oraz podlegają ocenie rankingowej FIDE. Tempo gry i system rozgrywek określa komunikat organizacyjny turnieju.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Jak liczona jest klasyfikacja generalna?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Do klasyfikacji generalnej liczy się 5 najwyżej punktowanych wyników uzyskanych w turniejach etapowych.</p>
+                    <p><strong>Przy remisie punktów:</strong></p>
+                    <ul>
+                        <li>decyduje najwyższy pojedynczy wynik,</li>
+                        <li>następnie kolejne najlepsze wyniki z turniejów.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Jak przyznawane są punkty do klasyfikacji generalnej?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Punkty zależą od miejsca oraz tempa gry (klasyczne, rapid, blitz). Wolniejsze tempo oznacza więcej punktów za to samo miejsce. Szczegółowa tabela punktowa jest w regulaminie.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Jakie są nagrody?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <ul>
+                        <li>Zwycięzcy każdej grupy w klasyfikacji generalnej otrzymują tytuł Zdobywcy Pucharu Polski Amatorów.</li>
+                        <li>Trzech najlepszych zawodników w każdej grupie otrzymuje medale.</li>
+                        <li>Szczegółowy sposób nagradzania określają komunikaty organizacyjne.</li>
+                    </ul>
+                    <p>Nieodebrane nagrody przepadają.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Czy mogę mieć telefon przy sobie podczas partii?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>Nie.</strong> Obowiązuje całkowity zakaz wnoszenia telefonów i urządzeń elektronicznych na salę gry.</p>
+                    <ul>
+                        <li>zawodnik: przegrana partia,</li>
+                        <li>osoby postronne: zakaz wstępu na salę gry.</li>
+                    </ul>
+                    <p>Sędzia główny może zarządzić kontrolę osobistą przy uzasadnionym podejrzeniu. Odmowa skutkuje wykluczeniem.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 11 -->
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Co jeśli spóźnię się na rundę?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="faq-answer" hidden>
+                    <ul>
+                        <li>do 30 minut: partia może zostać rozegrana,</li>
+                        <li>powyżej 30 minut: walkower.</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Map -->
         <div class="map-container animate-on-scroll">
             <img src="~/sources/puchar_polski_amatorow.jpg" alt="Mapa lokalizacji turniejów Pucharu Polski Amatorów w Szachach" class="map-image" loading="lazy">
@@ -516,8 +729,8 @@
         <!-- Partner Główny -->
         <div class="sponsor-main-wrapper animate-on-scroll">
             <h2 class="sponsor-section-title">Partner Główny</h2>
-            <img src="~/sources/arche.svg" alt="Arche - Partner Główny" class="sponsor-logo sponsor-logo--main">
-        </div>
+                <img src="~/sources/arche.svg" alt="Arche - Partner Główny" class="sponsor-logo sponsor-logo--main">
+            </div>
         
         <!-- Partnerzy -->
         <div class="sponsors-other-wrapper animate-on-scroll">
@@ -596,8 +809,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
-            <p class="footer-copyright">© 2025 Puchar Polski Amatorów w Szachach. Wszelkie prawa zastrzeżone.</p>
-            <p class="footer-credits">Projekt realizowany we współpracy z siecią hoteli Arche</p>
+            <p class="footer-copyright">© 2026 Puchar Polski Amatorów w Szachach. Wszelkie prawa zastrzeżone.</p>
         </div>
     </div>
 </footer>
