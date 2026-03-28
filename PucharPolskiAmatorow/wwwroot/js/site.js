@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Puchar Polski Amatorów w Szachach
  * Main JavaScript
  */
@@ -272,6 +272,76 @@
     }
 
     // ============================================
+    // GALLERY STRIP (Crossfade Slideshow)
+    // ============================================
+    function initGalleryStrip() {
+        var SLIDE_COUNT = 8;
+        var INTERVAL = 3000;
+
+        var strip = document.querySelector('.gallery-strip');
+        if (!strip) return;
+
+        var allImages;
+        try { allImages = JSON.parse(strip.dataset.images || '[]'); } catch (e) { return; }
+        if (allImages.length < 2) return;
+
+        for (var i = allImages.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = allImages[i]; allImages[i] = allImages[j]; allImages[j] = tmp;
+        }
+        var picked = allImages.slice(0, Math.min(SLIDE_COUNT, allImages.length));
+
+        var viewport = strip.querySelector('.gallery-strip__viewport');
+        var overlay = viewport.querySelector('.gallery-strip__overlay');
+
+        picked.forEach(function(src, idx) {
+            var slide = document.createElement('div');
+            slide.className = 'gallery-strip__slide' + (idx === 0 ? ' gallery-strip__slide--active' : '');
+
+            var img = document.createElement('img');
+            img.src = src;
+            img.alt = '';
+            img.className = 'gallery-strip__img';
+            if (idx > 0) img.loading = 'lazy';
+
+            slide.appendChild(img);
+            viewport.insertBefore(slide, overlay);
+        });
+
+        var slides = viewport.querySelectorAll('.gallery-strip__slide');
+        var current = 0;
+        var timer = null;
+
+        function goTo(index) {
+            slides[current].classList.remove('gallery-strip__slide--active');
+            current = ((index % slides.length) + slides.length) % slides.length;
+            slides[current].classList.add('gallery-strip__slide--active');
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            timer = setInterval(function() { goTo(current + 1); }, INTERVAL);
+        }
+
+        function stopAutoplay() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        var prevBtn = strip.querySelector('.gallery-strip__arrow--prev');
+        var nextBtn = strip.querySelector('.gallery-strip__arrow--next');
+
+        if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); startAutoplay(); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); startAutoplay(); });
+
+        if (window.innerWidth >= 768) {
+            strip.addEventListener('mouseenter', stopAutoplay);
+            strip.addEventListener('mouseleave', startAutoplay);
+        }
+
+        startAutoplay();
+    }
+
+    // ============================================
     // TOURNAMENT CARD INTERACTIONS
     // ============================================
     function initTournamentCards() {
@@ -291,12 +361,12 @@
             // Check if tournament has ended
             const endDateStr = card.dataset.endDate;
             if (endDateStr) {
-                const endDate = new Date(endDateStr);
-                endDate.setHours(23, 59, 59, 999);
+                const endDate = new Date(endDateStr + 'T00:00:00');
                 
-                if (today > endDate) {
+                if (today >= endDate) {
                     card.classList.add('tournament-card--finished');
-                    finishedCount++;
+                    const tournamentCount = parseInt(card.dataset.tournamentCount) || 1;
+                    finishedCount += tournamentCount;
                     
                     // Add "Zakończony" label at the bottom of tournament-info
                     const info = card.querySelector('.tournament-info');
@@ -328,18 +398,16 @@
         // Show/hide leaderboard based on finished tournaments
         const leaderboardPlaceholder = document.getElementById('leaderboard-placeholder');
         const leaderboardContent = document.getElementById('leaderboard-content');
-        const leaderboardLink = document.getElementById('leaderboard-link');
+        const leaderboardDownloads = document.getElementById('leaderboard-downloads');
         
         if (finishedCount === 0) {
-            // No finished tournaments - show placeholder, hide content
             if (leaderboardPlaceholder) leaderboardPlaceholder.classList.remove('hidden');
             if (leaderboardContent) leaderboardContent.classList.add('hidden');
-            if (leaderboardLink) leaderboardLink.classList.add('hidden');
+            if (leaderboardDownloads) leaderboardDownloads.classList.add('hidden');
         } else {
-            // Has finished tournaments - hide placeholder, show content
             if (leaderboardPlaceholder) leaderboardPlaceholder.classList.add('hidden');
             if (leaderboardContent) leaderboardContent.classList.remove('hidden');
-            if (leaderboardLink) leaderboardLink.classList.remove('hidden');
+            if (leaderboardDownloads) leaderboardDownloads.classList.remove('hidden');
         }
     }
 
@@ -504,6 +572,7 @@
         initScrollIndicator();
         initLazyLoading();
         initAccessibility();
+        initGalleryStrip();
         initTournamentCards();
         initScoringTabs();
         initFaqAccordion();

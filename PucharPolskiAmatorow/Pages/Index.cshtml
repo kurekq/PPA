@@ -1,7 +1,16 @@
-﻿@page
+@page
 @model IndexModel
+@using System.IO
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
 @{
     ViewData["Title"] = "Strona Główna";
+
+    var galleryDir = System.IO.Path.Combine(Env.WebRootPath, "sources", "Arche1");
+    var galleryImages = System.IO.Directory.Exists(galleryDir)
+        ? System.IO.Directory.GetFiles(galleryDir, "*.jpg")
+            .Select(f => "/sources/Arche1/" + System.IO.Path.GetFileName(f))
+            .ToArray()
+        : Array.Empty<string>();
 }
 
 <!-- Hero Section -->
@@ -98,25 +107,25 @@
                     <div class="scoring-panel scoring-panel--active" data-panel="classic-long">
                         <div class="scoring-list">
                             <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">100 pkt</span></div>
-                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">80 pkt</span></div>
-                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">65 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">55 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">45 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">37 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">30 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">25 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">20 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">15 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">85 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">75 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">65 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">60 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">55 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">50 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">45 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">40 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">30 pkt</span></div>
                         </div>
                         <div class="scoring-list-extended" style="display: none;">
-                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">12 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">10 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">8 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">7 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">6 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">5 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">4 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">25 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">20 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">16 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">13 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">8 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">4 pkt</span></div>
                             <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">2 pkt</span></div>
                             <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
                         </div>
@@ -126,88 +135,76 @@
                     <!-- Classic Short -->
                     <div class="scoring-panel" data-panel="classic-short">
                         <div class="scoring-list">
-                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">70 pkt</span></div>
-                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">56 pkt</span></div>
-                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">45 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">38 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">31 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">26 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">21 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">17 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">14 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">75 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">60 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">50 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">45 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">40 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">35 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">30 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">26 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">22 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">20 pkt</span></div>
                         </div>
                         <div class="scoring-list-extended" style="display: none;">
-                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">8 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">7 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">6 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">5 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">4 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">3 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">3 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">16 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">13 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">8 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">1 pkt</span></div>
                         </div>
-                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–18)</button>
                     </div>
                     
                     <!-- Rapid -->
                     <div class="scoring-panel" data-panel="rapid">
                         <div class="scoring-list">
-                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">50 pkt</span></div>
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">55 pkt</span></div>
                             <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">40 pkt</span></div>
-                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">32 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">27 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">22 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">18 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">15 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">12 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">10 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">7 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">35 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">31 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">27 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">24 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">21 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">18 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">15 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">13 pkt</span></div>
                         </div>
                         <div class="scoring-list-extended" style="display: none;">
-                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">6 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">5 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">4 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">3 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">3 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">8 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">2 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">1 pkt</span></div>
                         </div>
-                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–16)</button>
                     </div>
                     
                     <!-- Blitz -->
                     <div class="scoring-panel" data-panel="blitz">
                         <div class="scoring-list">
-                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">30 pkt</span></div>
-                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">24 pkt</span></div>
-                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">19 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">16 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">13 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">11 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">9 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">7 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">6 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">4 pkt</span></div>
+                            <div class="scoring-item scoring-item--gold"><span class="scoring-place">1.</span><span class="scoring-points">40 pkt</span></div>
+                            <div class="scoring-item scoring-item--silver"><span class="scoring-place">2.</span><span class="scoring-points">30 pkt</span></div>
+                            <div class="scoring-item scoring-item--bronze"><span class="scoring-place">3.</span><span class="scoring-points">27 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">4.</span><span class="scoring-points">24 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">5.</span><span class="scoring-points">21 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">6.</span><span class="scoring-points">18 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">7.</span><span class="scoring-points">15 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">8.</span><span class="scoring-points">13 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">9.</span><span class="scoring-points">10 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">10.</span><span class="scoring-points">8 pkt</span></div>
                         </div>
                         <div class="scoring-list-extended" style="display: none;">
-                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">3 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">3 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">11.</span><span class="scoring-points">6 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">12.</span><span class="scoring-points">4 pkt</span></div>
                             <div class="scoring-item"><span class="scoring-place">13.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">15.</span><span class="scoring-points">2 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">16.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">17.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">18.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">19.</span><span class="scoring-points">1 pkt</span></div>
-                            <div class="scoring-item"><span class="scoring-place">20.</span><span class="scoring-points">1 pkt</span></div>
+                            <div class="scoring-item"><span class="scoring-place">14.</span><span class="scoring-points">1 pkt</span></div>
                         </div>
-                        <button class="scoring-expand">Pokaż pełną punktację (1–20)</button>
+                        <button class="scoring-expand">Pokaż pełną punktację (1–14)</button>
                     </div>
                 </div>
             </div>
@@ -234,28 +231,28 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Magnus Carlsen</span>
-                                <span class="leaderboard-points">85 pkt</span>
+                                <span class="leaderboard-name">Leszczyński, Henryk</span>
+                                <span class="leaderboard-points">55 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Ding Liren</span>
-                                <span class="leaderboard-points">72 pkt</span>
+                                <span class="leaderboard-name">Łapacz, Marcin</span>
+                                <span class="leaderboard-points">40 pkt</span>
                             </div>
-                            <div class="leaderboard-item leaderboard-item--bronze">
-                                <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">Ian Nepomniachtchi</span>
-                                <span class="leaderboard-points">68 pkt</span>
+                            <div class="leaderboard-item leaderboard-item--silver">
+                                <span class="leaderboard-rank">2</span>
+                                <span class="leaderboard-name">Dec, Kazimierz</span>
+                                <span class="leaderboard-points">40 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Fabiano Caruana</span>
-                                <span class="leaderboard-points">55 pkt</span>
+                                <span class="leaderboard-name">Szerffel, Mateusz</span>
+                                <span class="leaderboard-points">35 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Hikaru Nakamura</span>
-                                <span class="leaderboard-points">48 pkt</span>
+                                <span class="leaderboard-name">Szymko, Marcin</span>
+                                <span class="leaderboard-points">31 pkt</span>
                             </div>
                         </div>
                     </div>
@@ -265,28 +262,28 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Alireza Firouzja</span>
-                                <span class="leaderboard-points">92 pkt</span>
+                                <span class="leaderboard-name">Walaszczyk, Michał</span>
+                                <span class="leaderboard-points">55 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Wesley So</span>
-                                <span class="leaderboard-points">78 pkt</span>
+                                <span class="leaderboard-name">Widelski, Kacper</span>
+                                <span class="leaderboard-points">51 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--bronze">
                                 <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">Anish Giri</span>
-                                <span class="leaderboard-points">71 pkt</span>
+                                <span class="leaderboard-name">Gappa, Adam</span>
+                                <span class="leaderboard-points">41 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Levon Aronian</span>
-                                <span class="leaderboard-points">63 pkt</span>
+                                <span class="leaderboard-name">Ochman, Sebastian</span>
+                                <span class="leaderboard-points">40 pkt</span>
                             </div>
                             <div class="leaderboard-item">
-                                <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Maxime Vachier-Lagrave</span>
-                                <span class="leaderboard-points">57 pkt</span>
+                                <span class="leaderboard-rank">4</span>
+                                <span class="leaderboard-name">Iwulski, Krzysztof</span>
+                                <span class="leaderboard-points">40 pkt</span>
                             </div>
                         </div>
                     </div>
@@ -296,38 +293,84 @@
                         <div class="leaderboard-list">
                             <div class="leaderboard-item leaderboard-item--gold">
                                 <span class="leaderboard-rank">1</span>
-                                <span class="leaderboard-name">Teimour Radjabov</span>
-                                <span class="leaderboard-points">105 pkt</span>
+                                <span class="leaderboard-name">Kaliszuk, Kamil</span>
+                                <span class="leaderboard-points">85 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--silver">
                                 <span class="leaderboard-rank">2</span>
-                                <span class="leaderboard-name">Nodirbek Abdusattorov</span>
-                                <span class="leaderboard-points">89 pkt</span>
+                                <span class="leaderboard-name">Smeryk, Andriy</span>
+                                <span class="leaderboard-points">80 pkt</span>
                             </div>
                             <div class="leaderboard-item leaderboard-item--bronze">
                                 <span class="leaderboard-rank">3</span>
-                                <span class="leaderboard-name">R Praggnanandhaa</span>
-                                <span class="leaderboard-points">76 pkt</span>
+                                <span class="leaderboard-name">Śliwicki, Damian</span>
+                                <span class="leaderboard-points">59 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">4</span>
-                                <span class="leaderboard-name">Gukesh D</span>
-                                <span class="leaderboard-points">68 pkt</span>
+                                <span class="leaderboard-name">Rojek, Wojciech</span>
+                                <span class="leaderboard-points">45 pkt</span>
                             </div>
                             <div class="leaderboard-item">
                                 <span class="leaderboard-rank">5</span>
-                                <span class="leaderboard-name">Wei Yi</span>
-                                <span class="leaderboard-points">61 pkt</span>
+                                <span class="leaderboard-name">Budzisz, Adrian</span>
+                                <span class="leaderboard-points">35 pkt</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <a href="https://docs.google.com/spreadsheets/d/14TsKqiu0MckraUb6yyTFpQ06acFIX-zCHN4vvUGiH4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="leaderboard-link" id="leaderboard-link">
-                    Zobacz wszystkie wyniki →
-                </a>
+                <div class="leaderboard-downloads" id="leaderboard-downloads">
+                    <p class="leaderboard-downloads-title">Pełne klasyfikacje do pobrania:</p>
+                    <div class="leaderboard-downloads-links">
+                        <a href="~/Puchar Polski 2026 - 1600.pdf" target="_blank" rel="noopener noreferrer" class="leaderboard-download-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            Grupa A (0–1600)
+                        </a>
+                        <a href="~/Puchar Polski 2026 - 1900.pdf" target="_blank" rel="noopener noreferrer" class="leaderboard-download-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            Grupa B (1601–1900)
+                        </a>
+                        <a href="~/Puchar Polski 2026 - 2200.pdf" target="_blank" rel="noopener noreferrer" class="leaderboard-download-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            Grupa C (1901–2200)
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Tournament Gallery Intro -->
+<section class="gallery-strip" aria-label="Galeria zdjęć z turniejów"
+         data-images="@System.Text.Json.JsonSerializer.Serialize(galleryImages)">
+    <div class="gallery-strip__viewport">
+        <div class="gallery-strip__overlay"></div>
+        <button class="gallery-strip__arrow gallery-strip__arrow--prev" aria-label="Poprzednie zdjęcie">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="gallery-strip__arrow gallery-strip__arrow--next" aria-label="Następne zdjęcie">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+    </div>
+    <div class="gallery-strip__footer">
+        <a href="/galeria" class="gallery-strip__link">Zobacz całą galerię</a>
     </div>
 </section>
 
@@ -336,7 +379,7 @@
     <div class="container">
         <div class="tournaments-grid">
             <!-- Tournament 1 - Częstochowa Zinzino -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2026-02-22">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-02-22" data-tournament-count="2">
                 <div class="tournament-sponsor">
                     <img src="~/sources/zinzino-logo.svg" alt="Zinzino" class="tournament-sponsor-logo">
                 </div>
@@ -390,7 +433,7 @@
                 </div>
             </article>
 
-            <!-- Tournament 3 -->
+            <!-- Tournament 3 - Wrocław -->
             <article class="tournament-card animate-on-scroll" data-end-date="2026-05-03">
                 <div class="tournament-date">
                     <span class="day">1-3</span>
@@ -406,12 +449,12 @@
                         </svg>
                         60'+30"
                     </p>
-                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
+                    <a href="https://www.chessmanager.com/pl-pl/tournaments/5388914608832512" target="_blank" rel="noopener noreferrer" class="tournament-btn">Serwis turniejowy</a>
                 </div>
             </article>
 
-            <!-- Tournament 4 -->
-            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-06-07">
+            <!-- Tournament 4 - Warszawa MP -->
+            <article class="tournament-card tournament-card--featured animate-on-scroll" data-end-date="2026-06-07" data-tournament-count="2">
                 <div class="tournament-badge">MP w szachach szybkich</div>
                 <div class="tournament-date">
                     <span class="day">6-7</span>
@@ -433,7 +476,7 @@
                         </svg>
                         3'+2"
                     </p>
-                    <span class="tournament-btn tournament-btn--disabled">Serwis turniejowy (w przygotowaniu)</span>
+                    <a href="https://www.chessmanager.com/pl-pl/tournaments/6443568642260992" target="_blank" rel="noopener noreferrer" class="tournament-btn">Serwis turniejowy</a>
                 </div>
             </article>
 
@@ -482,7 +525,7 @@
             </article>
 
             <!-- Tournament 7 -->
-            <article class="tournament-card animate-on-scroll" data-end-date="2026-11-15">
+            <article class="tournament-card animate-on-scroll" data-end-date="2026-11-15" data-tournament-count="2">
                 <div class="tournament-date">
                     <span class="day">14-15</span>
                     <span class="month">LIS</span>
